@@ -1,0 +1,14 @@
+%Warning-EOFNEWLINE: /home/engtech/Desktop/Openlane_v2/memristor_LA/openlane/user_proj_example/../../verilog/rtl/defines.v:66:28: Missing newline at end of file (POSIX 3.206).
+                                                                                                                                : ... Suggest add newline.
+   66 | `endif // __GLOBAL_DEFINE_H
+      |                            ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.009
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
+%Warning-EOFNEWLINE: /home/engtech/Desktop/Openlane_v2/memristor_LA/openlane/user_proj_example/../../verilog/rtl/user_proj_example.v:103:22: Missing newline at end of file (POSIX 3.206).
+                                                                                                                                           : ... Suggest add newline.
+  103 | `default_nettype wire
+      |                      ^
+%Error: /home/engtech/Desktop/Openlane_v2/memristor_LA/openlane/user_proj_example/../../verilog/rtl/user_proj_example.v:85:14: syntax error, unexpected IDENTIFIER
+   85 | core_flat_v4 core_flat_v4(
+      |              ^~~~~~~~~~~~
+%Error: Cannot continue
