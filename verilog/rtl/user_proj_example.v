@@ -35,7 +35,7 @@ wire [2:0] NUM_PULSES;   // Number of pulses to generate
 reg h_tag;
 reg [2:0] pulse_count; 
 wire valid;
-wire [3:0] la_write;
+wire [2:0] la_write;
 
 initial begin
     h_tag = 0;
@@ -50,20 +50,21 @@ assign rst = (~la_oenb[4]) ? la_data_in[4] : wb_rst_i;
 always @(posedge clk) begin
     h_tag <= ~h_tag;
     if (rst) begin
-        pulse_count <= 0;
-        la_data_out <= 0;
-        //analog_io2 <= 0;
+        pulse_count <= 3'b000;
+        la_data_out <= 1'b0;
+        
     end else begin
         if (pulse_count < NUM_PULSES && h_tag == 0) begin
-            pulse_count <= pulse_count + 1;
-            la_data_out <= 1;
-            //analog_io2 <= 1;
+            pulse_count <= pulse_count + 3'b001;
+            la_data_out <= 1'b1;
+            
         end else begin
-            la_data_out <= 0;
-            //analog_io2 <= 0;
+            la_data_out <= 1'b0;
+            
         end
     end
 end
+
 
 core_flat_v4 core_flat_v4 (
 `ifdef USE_POWER_PINS
